@@ -1,0 +1,156 @@
+body {
+  background-color: #0F0F0F;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 100vh;
+
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+#left {
+  width: 50%;
+}
+
+#myname h1 {
+  color: #E0E0E0;
+  margin-bottom: 10px;
+}
+
+.description h5 {
+  color: #AAAAAA;
+}
+
+.highlight {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #39FF14;
+  animation: typing 3s steps(25, end) forwards, blink 0.7s step-end infinite;
+  color: #39FF14;
+  font-weight: bold;
+  font-size: inherit;            /* match the h1 text */
+  vertical-align: baseline;      /* align properly with "Hi, I'm" */
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 58% }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent }
+  50% { border-color: #00FF00 }
+}
+
+.picture {
+  max-width: 250px;
+  height: auto;
+  border-radius: 30px;
+  border: solid;
+  border-color: transparent #228B22 #33cc33 transparent;
+  border-width: 0 4px 4px 0;
+  margin-left: 40px;
+  margin-top: 7%;
+  margin-right: 2%;
+}
+
+.navbar {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+  background-color: #0F0F0F;
+  position: sticky; /* Or fixed if you want it always on top */
+  top: 0;
+  z-index: 999;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+   border: solid;
+  border-color: transparent #228B22 #33cc33 transparent;
+  
+
+}
+
+.navbar a {
+  color: #39FF14;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  display: flex;
+  margin-top: 10px;
+
+
+}
+
+.navbar a:hover {
+  color: #FFFFFF;
+}
+
+.resumebtn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #33cc33;
+  color: #0F0F0F;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.resumebtn:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 10px;
+  min-height: 100vh;
+  color: #E0E0E0;
+  
+
+}
+
+#about { background-color: #121212; }
+#projects { background-color: #0F0F0F;  }
+#contact { background-color: #0F0F0F; }
+
+.section-about{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+
+#left2 {
+  width: 50%;
+}
+
+.section-about #aboutme{
+  margin-top: 10%;
+}
+
+.mypic {
+   max-width: 300px;
+  height: auto;
+  border-radius: 30px;
+  border: solid;
+  border-color: transparent #228B22 #33cc33 transparent;
+  border-width: 0 4px 4px 0;
+  margin-left: 40px;
+  margin-top:12% ;
+}
