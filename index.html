@@ -7,13 +7,45 @@
   <title>Lian James De Chavez</title>
 
   <style>
+    #preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  color: #28a745;
+  font-family: 'Courier New', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.terminal-line {
+  opacity: 0;
+  animation: showLine 0.5s forwards;
+}
+
+@keyframes showLine {
+  to { opacity: 1; }
+}
+
+  
     .highlight {
       display: inline-block;
       overflow: hidden;
       white-space: nowrap;
-      border-right: 2px solid #39FF14;
-      animation: typing 3s steps(24, end) forwards, blink 0.7s step-end infinite;
-      color: #39FF14;
+      border-right: 2px solid #28a745;
+      animation: typing 7s steps(24, end) forwards, blink 0.7s step-end infinite;
+      color: #28a745;
       font-weight: bold;
     }
 
@@ -24,104 +56,176 @@
 
     @keyframes blink {
       0%, 100% { border-color: transparent }
-      50% { border-color: #00FF00 }
+      50% { border-color: #28a745 }
     }
+
+    .highlight1 {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #28a745;
+      animation: typing1 3s steps(18, end) forwards, blink1 0.7s step-end infinite;
+      color:#28a745;
+      font-weight: bold;
+    }
+
+    @keyframes typing1 {
+      from { width: 0ch; }
+      to { width: 3ch; }
+    }
+
+    @keyframes blink1 {
+      0%, 100% { border-color: transparent }
+      50% { border-color: #28a745 }
+    }
+
   </style>
 </head>
 <body class="bg-[#0F0F0F] font-sans text-white scroll-smooth">
 
+  <div id="preloader">
+  <div class="terminal-line" style="animation-delay: 0s">Initializing system...</div>
+  <div class="terminal-line" style="animation-delay: 0.8s">Loading modules...</div>
+  <div class="terminal-line" style="animation-delay: 1.6s">Launching interface...</div>
+  <div class="terminal-line" style="animation-delay: 2.4s">ACCESS GRANTED ✅</div>
+</div>
+
+
   <!-- Navbar -->
-  <nav class="flex justify-end gap-8 sticky top-0 z-50 py-5 px-6 bg-[#0F0F0F] border-b-4 border-[#33cc33]">
-    <a href="#home" class="text-[#39FF14] font-bold hover:text-white">HOME</a>
-    <a href="#about" class="text-[#39FF14] font-bold hover:text-white">ABOUT ME</a>
-    <a href="#projects" class="text-[#39FF14] font-bold hover:text-white">PROJECTS</a>
-    <a href="#contact" class="text-[#39FF14] font-bold hover:text-white">CONTACT</a>
+  <nav class="flex flex-wrap justify-center md:justify-end gap-6 md:gap-8 sticky top-0 z-50 py-4 px-4 bg-[#0F0F0F] border-b-4 border-[#28a745] text-sm md:text-base">
+    <a href="#home" class="text-[#28a745] font-bold hover:text-white">HOME</a>
+    <a href="#about" class="text-[#28a745] font-bold hover:text-white">ABOUT ME</a>
+    <a href="#projects" class="text-[#28a745] font-bold hover:text-white">PROJECTS</a>
+    <a href="#contact" class="text-[#28a745] font-bold hover:text-white">CONTACT</a>
   </nav>
 
-
   <!-- Home Section -->
-  <section id="home" class="min-h-screen flex items-center px-12">
+  <section id="home" class="min-h-screen flex items-center px-6 md:px-12 py-10">
     <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mx-auto">
       <div class="w-full md:w-1/2">
-        <h1 class="text-4xl font-bold text-[#E0E0E0] mb-4 flex flex-wrap items-center gap-2">
-  <span>Hi, I'm</span>
-  <span class="highlight">Lian James De Chavez</span>
-</h1>
+        <h1 class="text-2xl md:text-4xl font-bold text-[#E0E0E0] mb-4 flex flex-wrap items-center gap-2">
+          <span>Hi, I'm</span>
+          <span class="highlight">Lian James De Chavez</span>
+        </h1>
 
-        <h5 class="text-[#AAAAAA] text-base">
+        <h5 class="text-[#AAAAAA] text-sm md:text-base">
           This is my official portfolio website to show all of my works and details about my life.
         </h5>
-        <a href="LianJamesDeChavez.pdf" download
-          class="inline-block mt-6 px-5 py-2 bg-[#33cc33] text-black font-bold rounded hover:bg-[#28a745] hover:text-white transition">
+        <a href="DeChavezLianJames.pdf" download
+          class="inline-block mt-6 px-5 py-2 bg-[#28a745] text-black font-bold rounded hover:bg-[#28a745] hover:text-white transition text-sm md:text-base">
           Download Resume
         </a>
       </div>
       <img src="picture.jpg" alt="default"
-        class="max-w-[250px] rounded-[30px] border-b-4 border-r-4 border-[#33cc33] ml-0 md:ml-10 mt-10 md:mt-0" />
+        class="max-w-[200px] md:max-w-[250px] rounded-[30px] border-b-4 border-r-4 border-[#28a745] ml-0 md:ml-10 mt-10 md:mt-0" />
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="bg-[#121212] min-h-screen px-12 py-20 flex items-center">
+  <section id="about" class="bg-[black] min-h-screen px-6 md:px-12 py-20 flex items-center">
     <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mx-auto">
       <img src="liannn.jpg" alt="default"
-        class="max-w-[300px] rounded-[30px] border-b-4 border-r-4 border-[#33cc33] mb-10 md:mb-0 md:mr-10" />
+        class="max-w-[200px] md:max-w-[300px] rounded-[30px] border-b-4 border-r-4 border-[#28a745] mb-10 md:mb-0 md:mr-10" />
       <div class="w-full md:w-1/2">
-        <h1 class="text-4xl font-bold text-[#E0E0E0] mb-4 flex flex-wrap items-center gap-2">
+        <h1 class="text-2xl md:text-4xl font-bold text-[#E0E0E0] mb-4 flex flex-wrap items-center gap-2">
           <span>ABOUT</span>
-          <span class="highlight">ME</span>
+          <span class="highlight1">ME</span>
         </h1>
-        <h5 class="text-[#AAAAAA] text-sm leading-relaxed">
-          I'm a cybersecurity enthusiast and aspiring bug bounty hunter with hands-on experience in basic penetration testing, vulnerability assessment, and secure web application development. I also have a foundational background in web development using HTML, CSS, JavaScript, and PHP.<br><br>
+        <p class="text-[#AAAAAA] text-xs md:text-sm leading-relaxed">
+          I'm a cybersecurity enthusiast and aspiring bug bounty hunter with hands-on experience in basic penetration testing, vulnerability assessment, and secure web application development.
+          I also have a foundational background in web development using HTML, CSS, JavaScript, and PHP.<br><br>
           Skilled in Linux, network traffic analysis, and both defensive and offensive security techniques. Despite working with limited hardware (Intel Celeron laptop), I’ve learned to be resourceful—dual-booting with Kali Linux, optimizing system resources, and borrowing RAM through swap to run essential tools.<br><br>
           I'm passionate about learning and take initiative to explore advanced concepts through research, community forums, and even creative methods like using Google Dorking to find educational resources and documentation.<br><br>
           I bring grit, practical knowledge from internships and self-driven projects, and a mindset focused on problem-solving and security. I'm eager to apply these skills to protect and empower organizations in the digital space.
-        </h5>
+        </p>
       </div>
     </div>
   </section>
 
-<section id="projects" class="bg-[#0F0F0F] min-h-screen px-12 py-20">
+  <!-- Projects and other sections remain the same, just ensure px-6 and text-sm on breakpoints for mobile readability -->
+  <section id="projects" class="bg-[#0F0F0F] min-h-screen px-12 py-20">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6 text-[#39FF14]">Projects</h2>
+    <h2 class="text-3xl font-bold mb-6 text-[#28a745]">Projects</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
       <!-- Project Card -->
-      <div class="bg-[#1a1a1a] p-6 rounded-lg shadow-md border border-[#33cc33]">
+      <div class="bg-[#1a1a1a] p-6 rounded-lg shadow-md border border-[#28a745]">
         <img src="logit.png" alt="Project 1" class="rounded mb-4">
-        <h3 class="text-xl font-semibold text-[#39FF14] mb-2">Digital Logbook with issue tracking system</h3>
+        <h3 class="text-xl font-semibold text-[#28a745] mb-2">Digital Logbook with issue tracking system</h3>
         <p class="text-[#AAAAAA] text-sm mb-3">A web-based log tracking system built in PHP and MySQL for students entering computer labs.</p>
         <p class="text-xs text-gray-400 mb-3">Built with: PHP, MySQL, Bootstrap</p>
         <div class="flex gap-4">
-          <a href="https://github.com/liannnnnn1111/digital-logbook-with-issue-tracking-system.git" target="_blank" class="text-[#33cc33] hover:underline text-sm">GitHub</a>
-          <a href="https://drive.google.com/file/d/1qjgGTpWoVZst8yYuraGSm7w4pUlbhAgr/view?usp=sharing" target="_blank" class="text-[#33cc33] hover:underline text-sm">Live Demo</a>
+          <a href="https://github.com/liannnnnn1111/digital-logbook-with-issue-tracking-system.git" target="_blank" class="text-[#28a745] hover:underline text-sm">GitHub</a>
+          <a href="https://drive.google.com/file/d/1qjgGTpWoVZst8yYuraGSm7w4pUlbhAgr/view?usp=sharing" target="_blank" class="text-[#28a745] hover:underline text-sm">Live Demo</a>
         </div>
       </div>
 
       <!-- Project Card 2 -->
-      <div class="bg-[#1a1a1a] p-6 rounded-lg shadow-md border border-[#33cc33]">
+      <div class="bg-[#1a1a1a] p-6 rounded-lg shadow-md border border-[#28a745]">
         <img src="autosched.png" alt="Project 2" class="rounded mb-4">
-        <h3 class="text-xl font-semibold text-[#39FF14] mb-2">3 Computer Laboratory Auto-scheduler</h3>
+        <h3 class="text-xl font-semibold text-[#28a745] mb-2">3 Computer Laboratory Auto-scheduler</h3>
         <p class="text-[#AAAAAA] text-sm mb-3">A web-based system that allows administrators to automatically add subjects and assign them to any of the three computer laboratory rooms without scheduling conflicts.</p>
         <p class="text-xs text-gray-400 mb-3">Built with: PHP, JavaScript, Bootstrap</p>
         <div class="flex gap-4">
-          <a href="https://github.com/liannnnnn1111/3-comlab-room-auto-scheduler.git" target="_blank" class="text-[#33cc33] hover:underline text-sm">GitHub</a>
-          <a href="https://drive.google.com/file/d/1bqb7_ASw598uz2k0ROyhMX6daUZNFgta/view?usp=sharing" target="_blank" class="text-[#33cc33] hover:underline text-sm">Live Demo</a>
+          <a href="https://github.com/liannnnnn1111/3-comlab-room-auto-scheduler.git" target="_blank" class="text-[#28a745] hover:underline text-sm">GitHub</a>
+          <a href="https://drive.google.com/file/d/1bqb7_ASw598uz2k0ROyhMX6daUZNFgta/view?usp=sharing" target="_blank" class="text-[#28a745] hover:underline text-sm">Live Demo</a>
         </div>
       </div>
 
       <!-- project card 3 --> 
-       <div class="bg-[#1a1a1a] p-6 rounded-lg shadow-md border border-[#33cc33]">
+       <div class="bg-[#1a1a1a] p-6 rounded-lg shadow-md border border-[#28a745]">
         <img src="osint.png" alt="Project 3" class="rounded mb-4">
-        <h3 class="text-xl font-semibold text-[#39FF14] mb-2">Basic Email associate finder</h3>
+        <h3 class="text-xl font-semibold text-[#28a745] mb-2">Basic Email associate finder</h3>
         <p class="text-[#AAAAAA] text-sm mb-3">A Python-based  tool that scans common platforms to check if an email address is associated bound with known websites and services.</p>
         <p class="text-xs text-gray-400 mb-3">Built with: Python, requests, Tkinter</p>
         <div class="flex gap-4">
-          <a href="https://github.com/liannnnnn1111/basic-email-osint.git" target="_blank" class="text-[#33cc33] hover:underline text-sm">GitHub</a>
-          <a href="https://drive.google.com/drive/folders/1nN1bTax6TFPPa4JwsidLFrg8zoOQsf1P?usp=sharing" target="_blank" class="text-[#33cc33] hover:underline text-sm">Live Demo</a>
+          <a href="https://github.com/liannnnnn1111/basic-email-osint.git" target="_blank" class="text-[#28a745] hover:underline text-sm">GitHub</a>
+          <a href="https://drive.google.com/drive/folders/1nN1bTax6TFPPa4JwsidLFrg8zoOQsf1P?usp=sharing" target="_blank" class="text-[#28a745] hover:underline text-sm">Live Demo</a>
         </div>
       </div>
+
+      <!-- project card 4 --> 
+  <div class="project-card bg-[#1a1a1a] p-6 rounded-lg border border-[#28a745] shadow-md">
+  <h3 class="text-xl font-bold text-[#28a745] mb-2">
+    Android Privacy Exploit Simulation (Ethical Lab Study)
+  </h3>
+  <p class="text-[#AAAAAA] text-sm mb-3">
+    Simulated a local-area Android device exploit in a controlled and ethical lab environment.
+    The goal was to understand how malicious apps can abuse permissions such as microphone,
+    location, and SMS — and how such actions can be detected and prevented.
+  </p>
+  <p class="text-xs text-gray-400 mb-3">
+    Tools Used: Metasploit Framework, Bash Scripting, Android Emulator
+  </p>
+  <a href="https://drive.google.com/file/d/1o6xGW1k2DYEUnumXYlTcH7Vt3FhWn8Mx/view?usp=sharing" target="_blank" class="inline-block px-4 py-2 bg-[#28a745] text-black font-semibold rounded hover:bg-[#28a428] transition">
+    ▶️ Watch Ethical Simulation
+  </a>
+</div>
+
+   <!--Porject card 5-->
+ <div class="project-card bg-[#1a1a1a] p-6 rounded-lg border border-[#28a745] shadow-md">
+  <h3 class="text-xl font-bold text-[#28a745] mb-2">
+    pfSense Installation and Configuration on Mini PC
+  </h3>
+
+  <p class="text-[#AAAAAA] text-sm mb-3">
+    Set up pfSense on a mini PC to segment the network between staff and visitors, preventing data leaks and enhancing overall network security. Configured firewall rules and VPN for controlled access.
+  </p>
+
+  <p class="text-xs text-gray-400 mb-3">
+    Tools Used: pfSense, LAN Switch, Local Router, Mini PC
+  </p>
+
+  <a href="https://drive.google.com/drive/folders/1QXYR4s4pVtDJ41j-BKpGBPZsAq8IXDlh?usp=drive_link" target="_blank"
+     class="inline-block px-4 py-2 bg-[#28a745] text-black font-semibold rounded hover:bg-[#28a428] transition">
+    📸 View Photo Compilation
+  </a>
+</div>
+
+
+
+
       <canvas id="cyber-rain" class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10"></canvas>
 
       <!-- Add more cards here -->
@@ -148,16 +252,14 @@
   <!-- Hidden time input -->
   <input type="hidden" name="time" />
 
-  <button type="submit" class="px-6 py-2 bg-[#33cc33] text-black font-bold rounded hover:bg-[#28a745] hover:text-white transition">
+  <button type="submit" class="px-6 py-2 bg-[#28a745] text-black font-bold rounded hover:bg-[#28a745] hover:text-white transition">
     Send
   </button>
 </form>
-<p id="status" class="mt-4 text-[#39FF14] hidden">Message sent!</p>
+<p id="status" class="mt-4 text-[#28a745] hidden">Message sent!</p>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-c
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
@@ -167,7 +269,7 @@ c
   const form = document.getElementById('contact-form');
 
   form.addEventListener('submit', function (e) {
-    e.preventDefault();c
+    e.preventDefault();
 
     // Set the current time value
     const now = new Date();
@@ -183,7 +285,7 @@ c
           icon: 'success',
           title: 'Message Sent!',
           text: 'Thank you for reaching out. I’ll get back to you soon.',
-          confirmButtonColor: '#33cc33'
+          confirmButtonColor: '#28a745'
         });
 
       }, (error) => {
@@ -213,40 +315,63 @@ c
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       word: words[Math.floor(Math.random() * words.length)],
-      speed: 1 + Math.random() * 1.5
+      speed: 1 + Math.random() * 1.5,
+      color: Math.random() < 0.5 ? 'green' : 'green' 
     };
   }
 
   function draw() {
-   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.font = "600 18px 'Courier New', monospace";
-ctx.fillStyle = "rgba(57, 255, 20, 0.65)";  // green with 25% opacity
+  ctx.shadowBlur = 0;
 
-ctx.shadowColor = "#39FF14";
-ctx.shadowBlur = 0; // sharp text, no glow
+  drops.forEach(drop => {
+    // Set color and shadow based on assigned drop color
+    if (drop.color === 'green') {
+      ctx.fillStyle = "rgba(57, 255, 20, 0.25)";
+      ctx.shadowColor = "#28a745";
+    } else {
+      ctx.fillStyle = "rgba(57, 255, 20, 0.35)";
+      ctx.shadowColor = "#28a745";
+    }
 
 
-    drops.forEach(drop => {
-      ctx.fillText(drop.word, drop.x, drop.y);
-      drop.y += drop.speed;
+    ctx.fillText(drop.word, drop.x, drop.y);
+    drop.y += drop.speed;
 
-      if (drop.y > canvas.height) {
-        drop.y = 0;
-        drop.word = words[Math.floor(Math.random() * words.length)];
-        drop.x = Math.random() * canvas.width;
-      }
-    });
+    if (drop.y > canvas.height) {
+      // Reset drop at the top with a new word and new color
+      drop.y = 0;
+      drop.word = words[Math.floor(Math.random() * words.length)];
+      drop.x = Math.random() * canvas.width;
+      drop.color = Math.random() < 0.5 ? 'green' : 'red'; // assign new fixed color
+    }
+  });
 
-    requestAnimationFrame(draw);
-  }
+  requestAnimationFrame(draw);
+}
+
 
   draw();
   window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   });
+
+
+  window.addEventListener("load", () => {
+    const lines = document.querySelectorAll(".terminal-line");
+    lines.forEach((line, index) => {
+      line.style.animation = `showLine 0.5s forwards`;
+      line.style.animationDelay = `${index * 0.8}s`;
+    });
+
+    setTimeout(() => {
+      document.getElementById("preloader").classList.add("hidden");
+    }, 4000); // hides after 4 seconds
+  });
+
+
 
 </script>
 
